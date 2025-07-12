@@ -309,6 +309,15 @@ pub enum Color {
     Black,
 }
 
+impl Display for Color {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Color::White => write!(f, "white"),
+            Color::Black => write!(f, "black"),
+        }
+    }
+}
+
 impl Add<u8> for Color {
     type Output = Color;
 
@@ -523,6 +532,15 @@ mod tests {
 
         let color = Color::White + 3;
         assert_eq!(color, Color::Black);
+    }
+
+    #[test]
+    fn test_color_display() {
+        let white = Color::White;
+        let black = Color::Black;
+
+        assert_eq!(format!("{}", white), "white");
+        assert_eq!(format!("{}", black), "black");
     }
 
 }

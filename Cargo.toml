@@ -1,6 +1,6 @@
 [package]
 name = "brute-move"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "A package for brute-force chess move validation. No pre-calculated bitboards. Tiny storage footprint."
 
