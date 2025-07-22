@@ -1,6 +1,9 @@
 use std::fmt::Display;
 use std::ops::Add;
 
+use schemars::JsonSchema;
+use serde::{Deserialize, Serialize};
+
 use crate::board::BoardState;
 
 #[derive(Debug, PartialEq, Eq, Clone, Copy)]
@@ -303,7 +306,7 @@ pub enum PieceType {
 ///     Color::Black => println!("This is a black piece!"),
 /// }
 /// 
-#[derive(Debug, Clone, PartialEq, Eq, Copy)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Copy, JsonSchema)]
 pub enum Color {
     White,
     Black,
